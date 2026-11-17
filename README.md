@@ -4,8 +4,8 @@ A web-based Event Management System built using **Java Servlets, JSP & JDBC** wi
 
 Users can browse events, book tickets, and manage bookings. Admin can manage events, users, and bookings from admin panel.
 
-**Live Demo:** https://truth-trophy-arrive.ngrok-free.dev/OEM_updated/login.jsp
-**Demo Video:** https://drive.google.com/file/d/101IUKCUB5Mek1ue4eul_2I0yVY9QdKf/view?usp=drivesdk
+**Live Demo:** https://truth-trophy-arrive.ngrok-free.dev/OEM_updated/login.jsp  
+**Demo Video:** https://drive.google.com/file/d/101IUKCUB5Mek1ue4eul_2I0yVY9QdKf/view?usp=drivesdk  
 
 ---
 
