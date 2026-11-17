@@ -1,0 +1,16 @@
+__pycache__/
+**/__pycache__/
+*.py
+*.pyc
+*.pyo
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.webp
+*.svg
+*.tif
+*.tiff
+build/
+*.class

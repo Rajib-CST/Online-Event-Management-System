@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>OnlineEventManagement</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- ================= FILTERS ================= -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AdminAuthFilter</filter-name>
+        <filter-class>filter.AdminAuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminAuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>VendorAuthFilter</filter-name>
+        <filter-class>filter.VendorAuthFilter</filter-class>
+    </filter>
+    <filter-mapping><filter-name>VendorAuthFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
+
+    <servlet><servlet-name>VendorSignupServlet</servlet-name><servlet-class>controller.VendorSignupServlet</servlet-class></servlet>
+    <servlet-mapping><servlet-name>VendorSignupServlet</servlet-name><url-pattern>/VendorSignupServlet</url-pattern></servlet-mapping>
+    <servlet><servlet-name>VendorLoginServlet</servlet-name><servlet-class>controller.VendorLoginServlet</servlet-class></servlet>
+    <servlet-mapping><servlet-name>VendorLoginServlet</servlet-name><url-pattern>/VendorLoginServlet</url-pattern></servlet-mapping>
+    <servlet><servlet-name>VendorLogoutServlet</servlet-name><servlet-class>controller.VendorLogoutServlet</servlet-class></servlet>
+    <servlet-mapping><servlet-name>VendorLogoutServlet</servlet-name><url-pattern>/VendorLogoutServlet</url-pattern></servlet-mapping>
+    <servlet><servlet-name>VendorDashboardServlet</servlet-name><servlet-class>controller.VendorDashboardServlet</servlet-class></servlet>
+    <servlet-mapping><servlet-name>VendorDashboardServlet</servlet-name><url-pattern>/VendorDashboardServlet</url-pattern></servlet-mapping>
+    <servlet><servlet-name>VendorItemServlet</servlet-name><servlet-class>controller.VendorItemServlet</servlet-class></servlet>
+    <servlet-mapping><servlet-name>VendorItemServlet</servlet-name><url-pattern>/VendorItemServlet</url-pattern></servlet-mapping>
+    <servlet><servlet-name>VendorBookingServlet</servlet-name><servlet-class>controller.VendorBookingServlet</servlet-class></servlet>
+    <servlet-mapping><servlet-name>VendorBookingServlet</servlet-name><url-pattern>/VendorBookingServlet</url-pattern></servlet-mapping>
+    <servlet><servlet-name>VendorProfileServlet</servlet-name><servlet-class>controller.VendorProfileServlet</servlet-class></servlet>
+    <servlet-mapping><servlet-name>VendorProfileServlet</servlet-name><url-pattern>/VendorProfileServlet</url-pattern></servlet-mapping>
+    <servlet><servlet-name>CancellationServlet</servlet-name><servlet-class>controller.CancellationServlet</servlet-class></servlet>
+    <servlet-mapping><servlet-name>CancellationServlet</servlet-name><url-pattern>/CancellationServlet</url-pattern></servlet-mapping>
+
+    <!-- ================= AUTH SERVLETS ================= -->
+    <servlet>
+        <servlet-name>SignupServlet</servlet-name>
+        <servlet-class>controller.SignupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignupServlet</servlet-name>
+        <url-pattern>/SignupServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ForgotPasswordServlet</servlet-name>
+        <servlet-class>controller.ForgotPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForgotPasswordServlet</servlet-name>
+        <url-pattern>/ForgotPasswordServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResetPasswordServlet</servlet-name>
+        <servlet-class>controller.ResetPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetPasswordServlet</servlet-name>
+        <url-pattern>/ResetPasswordServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= BOOKING FLOW SERVLETS ================= -->
+    <servlet>
+        <servlet-name>AvailabilityServlet</servlet-name>
+        <servlet-class>controller.AvailabilityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AvailabilityServlet</servlet-name>
+        <url-pattern>/AvailabilityServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VendorServlet</servlet-name>
+        <servlet-class>controller.VendorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VendorServlet</servlet-name>
+        <url-pattern>/VendorServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ItemServlet</servlet-name>
+        <servlet-class>controller.ItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ItemServlet</servlet-name>
+        <url-pattern>/ItemServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>controller.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookingServlet</servlet-name>
+        <servlet-class>controller.BookingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookingServlet</servlet-name>
+        <url-pattern>/BookingServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookingDetailsServlet</servlet-name>
+        <servlet-class>controller.BookingDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookingDetailsServlet</servlet-name>
+        <url-pattern>/BookingDetailsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyBookingsServlet</servlet-name>
+        <servlet-class>controller.MyBookingsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyBookingsServlet</servlet-name>
+        <url-pattern>/MyBookingsServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= PAYMENT SERVLET ================= -->
+    <servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>controller.PaymentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/PaymentServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= ADMIN SERVLETS ================= -->
+    <servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>controller.AdminLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/AdminLoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <servlet-class>controller.AdminLogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <url-pattern>/AdminLogoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VendorManagementServlet</servlet-name>
+        <servlet-class>controller.VendorManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VendorManagementServlet</servlet-name>
+        <url-pattern>/VendorManagementServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ItemManagementServlet</servlet-name>
+        <servlet-class>controller.ItemManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ItemManagementServlet</servlet-name>
+        <url-pattern>/ItemManagementServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookingManagementServlet</servlet-name>
+        <servlet-class>controller.BookingManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookingManagementServlet</servlet-name>
+        <url-pattern>/BookingManagementServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PaymentManagementServlet</servlet-name>
+        <servlet-class>controller.PaymentManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentManagementServlet</servlet-name>
+        <url-pattern>/PaymentManagementServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= SESSION CONFIG ================= -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- ================= ERROR HANDLING ================= -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>400</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+
+</web-app>
